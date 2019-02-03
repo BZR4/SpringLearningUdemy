@@ -28,12 +28,12 @@ public class SpringLearningUdemyApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Categoria categoria1 = new Categoria(1, "Informática");
-		Categoria categoria2 = new Categoria(2, "Escritório");
+		Categoria categoria1 = new Categoria(null, "Informática");
+		Categoria categoria2 = new Categoria(null, "Escritório");
 		
-		Produto produto1 = new Produto(1, "Computador", 2000.D);
-		Produto produto2 = new Produto(2, "Impressora", 800.D);
-		Produto produto3 = new Produto(3, "Mouse", 80.D);
+		Produto produto1 = new Produto(null, "Computador", 2000.D);
+		Produto produto2 = new Produto(null, "Impressora", 800.D);
+		Produto produto3 = new Produto(null, "Mouse", 80.D);
 		
 		/**
 		 * Preencher listas para adicionar aos relacionamentos dos objetos
