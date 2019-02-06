@@ -4,8 +4,8 @@
 
 O objetivo deste projeto é aprender os requisitos necessários para o desenvolvimento de aplicações utilizando os recursos do `Spring Framework`.
 
-Tecnologias esperadas:  
-1. Spring Boot
+### Tecnologias esperadas:
+1. Spring Boot Framework:
 * Spring JPS
 * Spring DevTools
 * Spring JPA
