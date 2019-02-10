@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.com.logicsp.learning.domain.Cidade;
 import br.com.logicsp.learning.repositories.CidadeRepository;
-import br.com.logicsp.learning.resources.exceptions.ObjectNotFoundException;
+import br.com.logicsp.learning.service.exceptions.ObjectNotFoundException;
 
 @Service
 public class CidadeService {

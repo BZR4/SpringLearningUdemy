@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.logicsp.learning.domain.Produto;
 import br.com.logicsp.learning.repositories.ProdutoRepository;
-import br.com.logicsp.learning.resources.exceptions.ObjectNotFoundException;
+import br.com.logicsp.learning.service.exceptions.ObjectNotFoundException;
 
 @Service
 public class ProdutoService {
