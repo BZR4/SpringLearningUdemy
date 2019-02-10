@@ -8,8 +8,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import br.com.logicsp.learning.domain.Categoria;
+import br.com.logicsp.learning.domain.Cidade;
+import br.com.logicsp.learning.domain.Estado;
 import br.com.logicsp.learning.domain.Produto;
 import br.com.logicsp.learning.repositories.CategoriaRepository;
+import br.com.logicsp.learning.repositories.CidadeRepository;
+import br.com.logicsp.learning.repositories.EstadoRepository;
 import br.com.logicsp.learning.repositories.ProdutoRepository;
 
 @SpringBootApplication
@@ -20,6 +24,12 @@ public class SpringLearningUdemyApplication implements CommandLineRunner{
 	
 	@Autowired
 	ProdutoRepository produtoRepository;
+	
+	@Autowired
+	EstadoRepository estadoRepository;
+	
+	@Autowired
+	CidadeRepository cidadeRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringLearningUdemyApplication.class, args);
@@ -38,24 +48,32 @@ public class SpringLearningUdemyApplication implements CommandLineRunner{
 		/**
 		 * Preencher listas para adicionar aos relacionamentos dos objetos
 		 */
-		
-//		categoria1.setProdutos(Arrays.asList(produto1, produto2, produto3));
-		
+				
 		categoria1.getProdutos().addAll(Arrays.asList(produto1, produto2, produto3));
 		
 		categoria2.getProdutos().addAll(Arrays.asList(produto2));
-		
-//		categoria2.setProdutos(Arrays.asList(produto2));
-		
+				
 		produto1.getCategorias().addAll(Arrays.asList(categoria1));
 		produto2.getCategorias().addAll(Arrays.asList(categoria1, categoria2));
 		produto3.getCategorias().addAll(Arrays.asList(categoria1));
 		
 		categoriaRepository.saveAll(Arrays.asList(categoria1, categoria2));
-		
 		produtoRepository.saveAll(Arrays.asList(produto1, produto2, produto3));
 		
+		Estado e1 = new Estado(null, "São Paulo");
+		Estado e2 = new Estado(null, "Minas Gerais");
 		
+		Cidade c1 = new Cidade(null, "Campinas",e1);
+		Cidade c2 = new Cidade(null, "São Paulo",e1);
+		Cidade c3 = new Cidade(null, "Uberlandia",e2);
+		
+		e1.getCidades().addAll(Arrays.asList(c1,c2));
+		e2.getCidades().addAll(Arrays.asList(c3));		
+		
+		
+		estadoRepository.saveAll(Arrays.asList(e1,e2));
+		
+		cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));
 	}
 
 }
