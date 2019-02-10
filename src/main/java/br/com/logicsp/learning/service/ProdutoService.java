@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.logicsp.learning.domain.Produto;
 import br.com.logicsp.learning.repositories.ProdutoRepository;
+import br.com.logicsp.learning.resources.exceptions.ObjectNotFoundException;
 
 @Service
 public class ProdutoService {
@@ -17,7 +18,7 @@ public class ProdutoService {
 	
 	public Produto buscar(Integer id) {
 		Optional<Produto> produto = produtoRepository.findById(id);
-		return produto.orElse(null);                                                                                                                                      
+		return produto.orElseThrow(()-> new ObjectNotFoundException("Objeto não encontrado"));                                                                                                                                     
 	}
 	
 	public List<Produto> buscarTodos(){
