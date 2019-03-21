@@ -1,4 +1,4 @@
-#Codigo da Classe GameActivity
+# Codigo da Classe GameActivity
 
 public class Game extends AppCompatActivity {
 
@@ -10,7 +10,7 @@ public class Game extends AppCompatActivity {
     static int ganhou = 0, empatou = 0, perdeu = 0;
 ```
 
-##Funcao onCreate
+## Funcao onCreate
 
 ```
     @Override
@@ -32,7 +32,7 @@ public class Game extends AppCompatActivity {
 
 ```
 
-##Função de escolha randomica de jogada do computador
+## Função de escolha randomica de jogada do computador
 ```
     public void escolhaDoComputador() {
         Random random = new Random();
@@ -107,7 +107,7 @@ public class Game extends AppCompatActivity {
 ```
 
 
-##Funcao para envio de mensagem
+## Funcao para envio de mensagem
 
 ```
     public void mensagem(String mensagem) {
@@ -116,7 +116,7 @@ public class Game extends AppCompatActivity {
 ```
 
 
-##Funcao para emitir alerta de Vencedor
+## Funcao para emitir alerta de Vencedor
 ```
     public void alertaVencedor(String frase) {
         if (nome.isEmpty()) {
@@ -145,7 +145,7 @@ public class Game extends AppCompatActivity {
 ```
 
 
-##Funcao para finalizar o Game
+## Funcao para finalizar o Game
 ```
     public void jogoEncerrado() {
 
@@ -170,5 +170,5 @@ public class Game extends AppCompatActivity {
 ```
 
 
-###Fim da classe    
+### Fim da classe    
 }
